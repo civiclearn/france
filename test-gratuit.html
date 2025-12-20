@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Test gratuit – Examen civique | Preparer-Examen-Civique.fr</title>
+
+  <link rel="canonical" href="https://preparer-examen-civique.fr/test-gratuit.html" />
+
+  <meta name="description"
+    content="Test gratuit de l’examen civique : 12 questions représentatives, chronomètre et résultat immédiat. Entraînez-vous avant votre démarche de séjour ou de nationalité française." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/testpages.css">
+  <style>
+  .test-intro {
+  max-width: 900px;
+  margin: 24px auto 10px;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.test-intro h1 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.test-subtitle {
+  color: #555;
+  font-size: 1rem;
+}
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="/index.html" class="brand-link">
+        <img src="/assets/images/fr.svg" alt="France">
+        <div class="brand-title">Preparer-Examen-Civique.fr</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/test-gratuit.html">Test gratuit</a>
+        <a href="/contact.html">Contact</a>
+		<a href="https://civiclearn.com/france/login">Connexion</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">
+        propulsé par <span>CivicLearn</span>
+      </div>
+      <a href="https://civiclearn.com/france/checkout.html" class="btn-small-purple">
+        Accès complet
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="test-intro">
+  <h1>Test gratuit – Examen civique français</h1>
+  <p class="test-subtitle">
+    Entraînez-vous avec un test représentatif des questions posées lors de l’examen civique
+    (valeurs de la République, laïcité, institutions, droits et devoirs).
+  </p>
+</section>
+
+  <div class="test-header">
+    <div>
+      <div class="badge">12 questions (version 2026)</div>
+      <div class="progress" id="progressLabel">Question 1 sur 12 · Points 0</div>
+    </div>
+    <div class="timer badge" id="timer">20:00</div>
+  </div>
+
+  <div class="question-card">
+    <div class="q-title" id="qTitle">…</div>
+    <div class="choices" id="choices"></div>
+
+    <div class="controls">
+      <button class="btn secondary" id="btnPrev" disabled>← Précédente</button>
+      <button class="btn" id="btnNext" disabled>Suivante →</button>
+    </div>
+  </div>
+
+  <div id="resultPanel" class="result-panel" style="display:none;">
+    <h2>Résultat du test</h2>
+    <div id="gradeStamp" class="result-stamp"></div>
+    <p id="resultText" class="result-text"></p>
+	
+	<div class="result-chart-container">
+  <canvas id="resultChart"></canvas>
+</div>
+
+    <div class="cta">
+      <a href="https://civiclearn.com/france/checkout.html" class="btn">
+        Accéder à la préparation complète
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © 2025 <span class="cl-footer-brand">CivicLearn</span> — Tous droits réservés.
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+/* ==========================
+   QUESTIONS – EXAMEN CIVIQUE
+   SOURCE: questionsgratuites.txt
+========================== */
+
+const QUESTIONS = [
+  {
+    q: "Dans la salle d’attente d’un hôpital public, un usager distribue des tracts religieux. Que doit faire le personnel ?",
+    a: [
+      "Interdire cette distribution prosélyte.",
+      "L’autoriser s’il les remet seulement à ses amis.",
+      "L’autoriser si les tracts sont pacifiques."
+    ]
+  },
+  {
+    q: "Dans une entreprise, le règlement intérieur interdit tout signe religieux pour des raisons de sécurité. Est-ce légal ?",
+    a: [
+      "Oui, si la restriction est justifiée par la nature du travail.",
+      "Oui, seulement pour certaines religions.",
+      "Non, toute interdiction est discriminatoire."
+    ]
+  },
+  {
+    q: "Un donneur est refusé parce qu’il est homosexuel. Est-ce légal ?",
+    a: [
+      "Non, les critères doivent reposer uniquement sur la sécurité sanitaire.",
+      "Oui, pour des raisons morales.",
+      "Oui, car le personnel choisit librement."
+    ]
+  },
+  {
+    q: "Un parent demande que sa fille soit dispensée des cours de sport pour des raisons religieuses. Quelle réponse conforme ?",
+    a: [
+      "Expliquer que les enseignements obligatoires s’imposent à tous.",
+      "Accorder une dispense permanente pour motif religieux.",
+      "Remplacer le sport par une étude surveillée chaque semaine."
+    ]
+  },
+  {
+    q: "Quels motifs ne peuvent pas justifier un refus d’embauche ?",
+    a: [
+      "L’âge, le handicap, l’appartenance à une ethnie ou à une religion, le sexe ou l’orientation sexuelle.",
+      "L’expérience de travail.",
+      "Les compétences professionnelles."
+    ]
+  },
+  {
+    q: "Quelle règle a rappelée le Conseil constitutionnel en 2004 ?",
+    a: [
+      "Nul ne peut se prévaloir de ses croyances religieuses pour s’affranchir des règles communes.",
+      "Les religions décident des règles de vie publique.",
+      "Les croyants ont priorité sur les lois de la République."
+    ]
+  },
+  {
+    q: "Quelle condition supplémentaire est nécessaire pour voter, en plus d’avoir 18 ans ?",
+    a: [
+      "Disposer de ses droits civils et politiques.",
+      "Payer des impôts.",
+      "Avoir un emploi."
+    ]
+  },
+  {
+    q: "Un journal publie une caricature provocante d’une figure religieuse. Quelle analyse correcte ?",
+    a: [
+      "C’est autorisé tant qu’il n’y a pas d’incitation à la haine.",
+      "Interdit dès que des croyants se sentent offensés.",
+      "Autorisé seulement si le dessinateur est croyant."
+    ]
+  },
+  {
+    q: "Quelle est la durée du mandat des sénateurs en France ?",
+    a: [
+      "6 ans",
+      "5 ans",
+      "7 ans"
+    ]
+  },
+  {
+    q: "Pour combien de temps le Président de la République est-il élu en France ?",
+    a: [
+      "5 ans",
+      "6 ans",
+      "7 ans"
+    ]
+  },
+  {
+    q: "En quelle année a été fondée la Communauté économique européenne ?",
+    a: [
+      "1957",
+      "2000",
+      "1992"
+    ]
+  },
+  {
+    q: "Un bail locatif est valide s'il est :",
+    a: [
+      "Établi par écrit",
+      "Oral uniquement",
+      "Validé par la préfecture"
+    ]
+  }
+];
+
+/* ==========================
+   LOGIC (UNCHANGED)
+========================== */
+
+function shuffle(arr) {
+  const a = arr.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const model = QUESTIONS.map((item, idx) => {
+  const correct = item.a[0];
+  const shuffled = shuffle(item.a);
+  return {
+    index: idx,
+    text: item.q,
+    choices: shuffled.map(opt => ({ text: opt, isCorrect: opt === correct })),
+    answered: false,
+    pickedIndex: -1
+  };
+});
+
+const qTitle = document.getElementById('qTitle');
+const choicesEl = document.getElementById('choices');
+const btnPrev = document.getElementById('btnPrev');
+const btnNext = document.getElementById('btnNext');
+const progressLabel = document.getElementById('progressLabel');
+const resultPanel = document.getElementById('resultPanel');
+const resultText = document.getElementById('resultText');
+const timerEl = document.getElementById('timer');
+
+let qi = 0, score = 0;
+const total = model.length;
+let timerSec = 20 * 60;
+
+const timerInt = setInterval(() => {
+  timerSec--;
+  if (timerSec < 0) {
+    clearInterval(timerInt);
+    finishTest();
+    return;
+  }
+  const m = Math.floor(timerSec / 60).toString().padStart(2, '0');
+  const s = (timerSec % 60).toString().padStart(2, '0');
+  timerEl.textContent = `${m}:${s}`;
+}, 1000);
+
+function renderQuestion() {
+  const q = model[qi];
+  qTitle.textContent = q.text;
+  choicesEl.innerHTML = '';
+
+  q.choices.forEach((c, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'choice' + (q.answered ? ' disabled' : '');
+    btn.textContent = c.text;
+    btn.addEventListener('click', () => pick(idx));
+    choicesEl.appendChild(btn);
+  });
+
+  btnPrev.disabled = (qi === 0);
+  btnNext.disabled = !q.answered;
+
+  progressLabel.textContent =
+    `Question ${qi + 1} sur ${total} · Score ${score}`;
+
+  if (q.answered) applyRevealStyles();
+
+  if (qi === total - 1) btnNext.textContent = "Voir le résultat →";
+  else btnNext.textContent = "Suivante →";
+}
+
+function pick(idx) {
+  const q = model[qi];
+  if (q.answered) return;
+
+  q.answered = true;
+  q.pickedIndex = idx;
+
+  if (q.choices[idx].isCorrect) score++;
+
+  applyRevealStyles();
+
+  btnNext.disabled = false;
+  progressLabel.textContent =
+    `Question ${qi + 1} sur ${total} · Score ${score}`;
+
+  if (qi === total - 1) btnNext.textContent = "Voir le résultat →";
+}
+
+function applyRevealStyles() {
+  const q = model[qi];
+  const buttons = choicesEl.querySelectorAll('.choice');
+  buttons.forEach((b, i) => {
+    b.classList.add('disabled');
+    if (q.choices[i].isCorrect) b.classList.add('correct');
+    if (q.pickedIndex === i && !q.choices[i].isCorrect) b.classList.add('wrong');
+  });
+}
+
+btnNext.addEventListener('click', () => {
+  if (qi < total - 1) {
+    qi++;
+    renderQuestion();
+  } else {
+    finishTest();
+  }
+});
+
+btnPrev.addEventListener('click', () => {
+  if (qi > 0) {
+    qi--;
+    renderQuestion();
+  }
+});
+
+function finishTest() {
+  clearInterval(timerInt);
+  document.querySelector('.question-card').style.display = 'none';
+  resultPanel.style.display = 'block';
+
+  const wrong = total - score;
+
+  resultText.textContent =
+    `Score final : ${score} / ${total} · ` +
+    `Bonnes réponses : ${score} · Mauvaises réponses : ${wrong}`;
+
+  renderChart(score, wrong);
+}
+
+function renderChart(correct, wrong) {
+  const ctx = document.getElementById('resultChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: ['Bonnes réponses', 'Mauvaises réponses'],
+      datasets: [{ data: [correct, wrong] }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { position: 'bottom' }
+      }
+    }
+  });
+}
+
+renderQuestion();
+</script>
+
+
+</body>
+</html>

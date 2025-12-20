@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <!-- SEO -->
+  <title>Articles & Guides – Examen civique français</title>
+  <meta name="description"
+        content="Guides et articles pour réussir l’examen civique français : valeurs de la République, institutions, droits, devoirs et mises en situation.">
+
+  <link rel="canonical" href="https://preparer-examen-civique.fr/articles">
+
+  <!-- GLOBAL CSS -->
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+
+<body>
+
+<!-- ===============================
+     HEADER
+================================== -->
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="/index.html" class="brand-link">
+        <img src="/assets/images/fr.svg" alt="France">
+        <div class="brand-title">Preparer-Examen-Civique.fr</div>
+      </a>
+    </div>
+
+    <div class="header-center"></div>
+
+    <nav class="header-nav">
+      <a href="/test-gratuit.html">Test gratuit</a>
+      <a href="/contact.html">Contact</a>
+	  <a href="https://civiclearn.com/france/login">Connexion</a>
+    </nav>
+
+    <div class="header-right">
+      <div class="brand-powered">propulsé par <span>CivicLearn</span></div>
+      <a href="https://civiclearn.com/france/checkout.html"
+         class="btn-small-purple">
+        Accès Premium
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<section class="articles-title">
+  <h1>Guides & Articles – Examen civique</h1>
+  <p>
+    Comprendre les valeurs de la République, les institutions françaises
+    et le nouveau format de l’examen civique.
+  </p>
+</section>
+
+
+<!-- ===============================
+     CTA TOP
+================================== -->
+<section class="articles-cta-inline">
+  <span>
+    Entraînez-vous avec des questions officielles et des mises en situation.
+  </span>
+  <a href="/test-gratuit.html" class="cta-purple">
+    Faire le test gratuit
+  </a>
+</section>
+
+<!-- ===============================
+     FEATURED ARTICLE
+================================== -->
+<section class="featured-article-section">
+
+  <div class="featured-article">
+    <div id="featuredArticle"></div>
+  </div>
+
+</section>
+
+<!-- ===============================
+     ARTICLES GRID
+================================== -->
+<section class="articles-grid-section">
+  <div id="articlesGrid" class="articles-grid"></div>
+</section>
+
+<!-- ===============================
+     CTA BOTTOM
+================================== -->
+<section class="article-cta-bottom">
+  <h3>Préparation complète à l’examen civique</h3>
+  <p>
+    Accédez à des questions conformes au nouveau format
+    et à plus de 200 mises en situation.
+  </p>
+  <a href="https://civiclearn.com/france/checkout.html"
+     class="cta-purple">
+    Commencer la préparation
+  </a>
+</section>
+
+<!-- ===============================
+     FOOTER
+================================== -->
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © <span id="footer-year"></span>
+    <span class="cl-footer-brand">CivicLearn</span> by Testrada — Tous droits réservés.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+<!-- ===============================
+     ARTICLE LOADER (IDENTICAL LOGIC TO GENEVA)
+================================== -->
+<script>
+(async function () {
+  const res = await fetch('/articles/articles.json');
+  const list = await res.json();
+
+  if (!Array.isArray(list) || !list.length) return;
+
+  /* FEATURED ARTICLE */
+  const featured = list[Math.floor(Math.random() * list.length)];
+
+  document.getElementById('featuredArticle').innerHTML = `
+    <a href="${featured.url}" class="featured-card">
+      <div class="featured-card-image">
+        <img src="${featured.image}" alt="${featured.title}">
+      </div>
+      <div class="featured-card-content">
+        <h3>${featured.title}</h3>
+        <p>${featured.desc}</p>
+        <span class="featured-read-more">Lire l’article →</span>
+      </div>
+    </a>
+  `;
+
+  /* GRID */
+  const shuffled = [...list].sort(() => Math.random() - 0.5);
+
+  document.getElementById('articlesGrid').innerHTML = shuffled.map(a => `
+    <a href="${a.url}" class="blog-card">
+      <img src="${a.image}" alt="${a.title}">
+      <h3>${a.title}</h3>
+      <p>${a.desc}</p>
+    </a>
+  `).join('');
+})();
+</script>
+
+</body>
+</html>

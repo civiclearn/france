@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- ===============================
+       SEO FOR ARTICLE
+  ================================== -->
+  <title>Examen civique : le guide rapide pour bien démarrer</title>
+
+  <meta name="description"
+        content="Comprendre l’examen civique : à qui il s’adresse, ce qu’il couvre, comment s’inscrire et comment se préparer efficacement grâce aux questions officielles et aux mises en situation.">
+
+  <meta name="keywords"
+        content="examen civique, guide examen civique, questions officielles examen civique, livret du citoyen, préparation examen civique">
+
+  <link rel="canonical"
+        href="https://preparer-examen-civique.fr/examen-civique-guide-rapide">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="article">
+  <meta property="og:title"
+        content="Examen civique : le guide rapide pour bien démarrer">
+  <meta property="og:description"
+        content="Le fonctionnement de l’examen civique expliqué simplement : objectifs, contenu, inscription et méthode de préparation efficace.">
+  <meta property="og:image"
+        content="https://preparer-examen-civique.fr/assets/images/articles/examen-civique-guide-rapide.webp">
+  <meta property="og:url"
+        content="https://preparer-examen-civique.fr/examen-civique-guide-rapide">
+
+  <!-- TWITTER -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Examen civique : le guide rapide pour bien démarrer">
+  <meta name="twitter:description"
+        content="Un guide clair pour comprendre et préparer l’examen civique en France.">
+  <meta name="twitter:image"
+        content="https://preparer-examen-civique.fr/assets/images/articles/examen-civique-guide-rapide.webp">
+
+  <!-- GLOBAL -->
+  <link rel="stylesheet" href="/assets/css/shared.css">
+  <link rel="stylesheet" href="/assets/css/blog.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="/index.html" class="brand-link">
+        <img src="/assets/images/fr.svg" alt="France">
+        <div class="brand-title">Preparer-Examen-Civique.fr</div>
+      </a>
+    </div>
+
+    <div class="header-center">
+      <nav class="header-nav">
+        <a href="/test-gratuit.html">Test gratuit</a>
+        <a href="/articles">Articles</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+
+    <div class="header-right">
+      <div class="brand-powered">propulsé par <span>CivicLearn</span></div>
+      <a href="https://civiclearn.com/france/checkout.html" class="btn-small-purple">
+        Accès Premium
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<section class="article-hero">
+  <h1>Examen civique : le guide rapide pour bien démarrer</h1>
+  <p class="article-subtitle">
+    À qui s’adresse l’examen civique, ce qu’il évalue et comment s’y préparer efficacement.
+  </p>
+</section>
+
+<!-- TOP CTA -->
+<section class="article-cta-top">
+  <h3>Avez-vous déjà essayé notre test gratuit&nbsp;?</h3>
+  <p>
+    30 questions aléatoires, issues de nos 400 questions basées sur le
+    <em>Livret du citoyen</em>.
+  </p>
+  <a href="/test-gratuit.html" class="cta-purple">Faire le test gratuit</a>
+</section>
+
+<!-- ARTICLE BODY -->
+<section class="article-body">
+
+  <h2>Pourquoi un examen civique&nbsp;?</h2>
+  <p>
+    L’examen civique vise à vérifier des connaissances essentielles sur la France&nbsp;:
+    valeurs républicaines, droits et devoirs, institutions, histoire et repères culturels.
+    Il peut être requis dans le cadre d’une demande de nationalité française et,
+    selon les situations, pour certains titres de séjour de longue durée.
+  </p>
+
+  <h2>À qui s’adresse l’examen civique&nbsp;?</h2>
+  <ul>
+    <li>Demandeurs de nationalité française</li>
+    <li>Certains demandeurs de titres de séjour de longue durée</li>
+  </ul>
+  <p>
+    Les modalités pouvant varier, il est recommandé de se renseigner directement
+    auprès de sa préfecture et du centre d’examen choisi.
+  </p>
+
+  <h2>Ce que couvre l’examen civique</h2>
+
+  <h3>Valeurs de la République</h3>
+  <p>
+    Liberté, égalité, fraternité, laïcité, primauté de la loi et symboles républicains.
+  </p>
+
+  <h3>Droits et devoirs</h3>
+  <p>
+    Droits fondamentaux, obligations civiques et fiscales, participation à la vie démocratique.
+  </p>
+
+  <h3>Institutions françaises</h3>
+  <p>
+    Pouvoir exécutif, législatif et judiciaire, collectivités territoriales,
+    organisation administrative et rôle de l’Union européenne.
+  </p>
+
+  <h3>Histoire et culture</h3>
+  <p>
+    Grands repères historiques et culturels nécessaires à la compréhension de la société française.
+  </p>
+
+  <h2>Comment s’inscrire&nbsp;?</h2>
+  <p>
+    Les inscriptions se font auprès d’un centre agréé. Vérifiez les sessions disponibles,
+    les pièces à fournir et les délais. Anticipez les périodes de forte demande et
+    conservez une copie de tous vos justificatifs.
+  </p>
+
+  <h2>Méthode de préparation efficace</h2>
+  <ul>
+    <li><strong>Diagnostic</strong> : commencez par un test pour identifier vos lacunes.</li>
+    <li><strong>Routines courtes</strong> : 15 à 20 minutes par thème, chaque jour.</li>
+    <li><strong>Alternance</strong> : combinez Livret du citoyen, QCM et simulations.</li>
+    <li><strong>Répétition espacée</strong> : revenez sur les erreurs à J+1, J+3, J+7.</li>
+  </ul>
+
+  <h2>Erreurs fréquentes à éviter</h2>
+  <ul>
+    <li>Réviser uniquement l’histoire et négliger les institutions</li>
+    <li>Confondre valeurs républicaines et droits individuels</li>
+    <li>Négliger la carte administrative et les territoires ultramarins</li>
+    <li>Tout concentrer sur la dernière semaine</li>
+  </ul>
+
+  <h2>Passer de « je révise » à « je suis prêt »</h2>
+  <p>
+    Entraînez-vous en conditions réelles avec des simulations aléatoires et
+    recherchez la régularité des scores plutôt que la réussite ponctuelle.
+  </p>
+  <p>
+    Notre plateforme propose plus de <strong>400 questions basées sur le Livret du citoyen</strong>,
+    ainsi que des simulations illimitées pour vous préparer sereinement.
+  </p>
+
+</section>
+
+<!-- RELATED ARTICLES -->
+<section class="article-related">
+  <h2>Articles liés</h2>
+  <div class="related-grid"></div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="article-cta-bottom">
+  <h3>Préparez l’examen civique efficacement</h3>
+  <p>
+    Accédez à l’ensemble des questions officielles, aux mises en situation
+    et aux simulations chronométrées.
+  </p>
+  <a href="https://civiclearn.com/france/checkout.html" class="cta-purple">
+    Commencer la préparation
+  </a>
+</section>
+
+<footer class="cl-footer">
+  <div class="cl-footer-inner">
+    © <span id="footer-year"></span>
+    <span class="cl-footer-brand">CivicLearn</span> by Testrada — Tous droits réservés.
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>
+
+<script>
+(async function () {
+  const container = document.querySelector('.related-grid');
+  if (!container) return;
+
+  const currentUrl = window.location.pathname;
+
+  const res = await fetch('/articles/articles.json');
+  const all = await res.json();
+
+  const others = all.filter(a => a.url !== currentUrl);
+  const selected = others.sort(() => Math.random() - 0.5).slice(0, 3);
+
+  container.innerHTML = selected.map(a => `
+    <a class="related-card" href="${a.url}">
+      <img src="${a.image}" alt="${a.title}">
+      <div class="related-card-body">
+        <h3>${a.title}</h3>
+        <p>${a.desc}</p>
+      </div>
+    </a>
+  `).join('');
+})();
+</script>
+
+</body>
+</html>
