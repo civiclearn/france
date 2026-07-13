@@ -46,7 +46,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/newhome.css">
-  <link rel="stylesheet" href="/assets/css/blog.css">
 </head>
 
 <body>
@@ -389,7 +388,16 @@
           <span style="flex:0 0 auto;color:#7c3aed;font-weight:600;font-size:.84rem;white-space:nowrap;">Voir le classement &rarr;</span>
         </a>
 
-        <div class="blog-index-list" id="home-articles-list"></div>
+        <style>
+          #home-articles-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;max-width:1100px;margin:0 auto;}
+          #home-articles-list .ha-card{display:block;text-decoration:none;color:inherit;background:#fff;border:1px solid #e5e1da;border-radius:14px;overflow:hidden;transition:transform .15s,box-shadow .15s;}
+          #home-articles-list .ha-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.08);}
+          #home-articles-list .ha-card img{width:100%;height:150px;object-fit:cover;display:block;}
+          #home-articles-list .ha-card .ha-body{padding:14px 16px;}
+          #home-articles-list .ha-card h3{margin:0 0 6px;font-size:1rem;line-height:1.3;color:#1a1a2e;}
+          #home-articles-list .ha-card p{margin:0;font-size:.85rem;line-height:1.45;color:#6b7280;}
+        </style>
+        <div id="home-articles-list"></div>
       </div>
     </section>
 
@@ -404,10 +412,12 @@
         if (!Array.isArray(list) || !list.length) return;
         const picks = [...list].sort(() => Math.random() - 0.5).slice(0, 6);
         el.innerHTML = picks.map(a => `
-          <a href="${a.url}" class="blog-card">
+          <a href="${a.url}" class="ha-card">
             <img src="${a.image}" alt="${a.title}">
-            <h3>${a.title}</h3>
-            <p>${a.desc}</p>
+            <div class="ha-body">
+              <h3>${a.title}</h3>
+              <p>${a.desc}</p>
+            </div>
           </a>
         `).join('');
       } catch (e) { /* leave the section empty if the fetch fails */ }
