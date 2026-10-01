@@ -143,7 +143,6 @@ document.addEventListener("DOMContentLoaded", () => {
       <a href="https://civiclearn.com/france/checkout.html" class="hero-primary-btn">
         Accéder à la préparation complète
       </a>
-    <p class="wc-curious" style="margin-top:0.9rem;font-size:0.85rem;line-height:1.45;text-align:center;"><a href="https://civiclearn.com/insights/hardest-citizenship-questions?utm_source=france-home&amp;utm_medium=free-test&amp;utm_campaign=world-challenge" target="_blank" rel="noopener" style="color:inherit;opacity:0.75;text-decoration:underline;text-underline-offset:2px;">Simple curiosité ? Essayez les questions de citoyenneté les plus difficiles du monde (en anglais) →</a></p>
     `;
     return card;
   }
